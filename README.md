@@ -15,4 +15,3 @@ This is the implementation of the paper:
 ## Required package ###
   - Python 3
   - PyTorch ,torchvision
-  - termcolor ,tqdm
