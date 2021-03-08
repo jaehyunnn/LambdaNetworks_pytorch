@@ -15,3 +15,19 @@ This is the implementation of the paper:
 ## Required package ###
   - Python 3
   - PyTorch ,torchvision
+
+## Usage
+
+###  Train
+
+```bash
+python train.py --help
+
+# An example of training script
+python train.py \
+--gpu 0 \
+--lr 1e-2 \
+--weight-decay 1e-4 \
+--num-epoch 100 \
+--batch-size 256
+```

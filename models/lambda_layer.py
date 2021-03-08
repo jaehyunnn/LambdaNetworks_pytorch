@@ -2,6 +2,10 @@ import torch
 import torch.nn as nn
 import torch.nn.functional as F
 
+
+__all__ = ['LambdaLayer']
+
+
 class LambdaLayer(nn.Module):
     def __init__(self, d, k, v, num_head, r=23, num_pos=None):
         super(LambdaLayer, self).__init__()
@@ -50,7 +54,7 @@ class LambdaLayer(nn.Module):
         else:
             lambda_p = torch.einsum('nmk, bmv -> bnkv',self.pos_embedding, value)
 
-        lambda_final = lambda_c + lambda_p # bnkv
+        lambda_final = lambda_c.unsqueeze(1) + lambda_p # bnkv
         return torch.einsum('bhnk, bnkv -> bnhv', query, lambda_final).reshape(b,h,w,-1).permute(0,3,1,2)
 
 # if __name__ == '__main__':
