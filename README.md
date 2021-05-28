@@ -31,3 +31,6 @@ python train.py \
 --num-epoch 100 \
 --batch-size 256
 ```
+## Author ##
+
+[@ Jae-Hyun Park](https://github.com/jaehyunnn)
